@@ -18,7 +18,7 @@ Using the most effective model, each mnist image was able to be compressed to 20
 
 Also a kinda cool side note - I ran all these models on a machine-learning server I built out of the skeleton of an old gaming pc.
 
-<img src="https://github.com/lfzbrennan/Compressing-Mnist-using-BiCAN/blob/master/supplementary_images/data_table.png">
+<img src="https://github.com/lfzbrennan/Compressing-Mnist-using-BiCAN/blob/master/supplementary_images/data_table.png" alt="results">
 
 **Direct Comparisons**
 
@@ -28,5 +28,11 @@ Also a kinda cool side note - I ran all these models on a machine-learning serve
 * .txt: 47 Mb -> 7.4 Mb: Size reduced **535%**
 
 Overall, I was pretty impressed with these results. With only 1% loss, I was able to compress the entire mnist dataset to less than 1/5 of its original size. 
+
+Below are some examples of original images and the decompressed recreation. For the most part, the compression was spotless. However, in some situations the algorithm faltered, as you can see by looking at the three in the bottom left. The algorithm probably mistook the three for a nine, and optimized the compression incorrectly. 
+
+<img src="https://github.com/lfzbrennan/Compressing-Mnist-using-BiCAN/blob/master/supplementary_images/example_decompressed_images.png" alt="Original Images">
+
+<img src="https://github.com/lfzbrennan/Compressing-Mnist-using-BiCAN/blob/master/supplementary_images/example_original_images.png" alt="Recreated Images">                                                                              
 
 
