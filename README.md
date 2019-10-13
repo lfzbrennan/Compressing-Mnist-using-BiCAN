@@ -16,6 +16,17 @@
 
 Using the most effective model, each mnist image was able to be compressed to 200 bytes, with a loss of roughly 1%. After compiling them into plain text, npy, and gz files, I compared the file sizes to the original mnist dataset. These comparisons are shown below.
 
-![Results](https://github.com/lfzbrennan/Compressing-Mnist-using-BiCAN/edit/master/supplementary_images/data_table.png)
+Also a kinda cool side note - I ran all these models on a machine-learning server I built out of the skeleton of an old gaming pc.
 
-The best results netted roughly 1% (with a decompressor loss of ~.011) loss. 
+<img src="https://github.com/lfzbrennan/Compressing-Mnist-using-BiCAN/blob/master/supplementary_images/data_table.png">
+
+**Direct Comparisons**
+
+* .npy.gz: 2.9 Mb -> 1.9 Mb: Size reduced 53%
+* .npy: 10.2 Mb -> 2.0 Mb: Size reduced **410%**
+* .txt.gz: 9.9 Mb -> 2.5 Mb: Size reduced 296%
+* .txt: 47 Mb -> 7.4 Mb: Size reduced **535%**
+
+Overall, I was pretty impressed with these results. With only 1% loss, I was able to compress the entire mnist dataset to less than 1/5 of its original size. 
+
+
