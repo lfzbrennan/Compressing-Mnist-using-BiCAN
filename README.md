@@ -11,3 +11,11 @@
 **Losses**
 * Decompressor Loss: MSE loss between original image and recreated image (step 2)
 * Compressor Loss: MSE loss between original compressed image (step 1) and compressed recreated image (step 3)
+
+**Results**
+
+Using the most effective model, each mnist image was able to be compressed to 200 bytes, with a loss of roughly 1%. After compiling them into plain text, npy, and gz files, I compared the file sizes to the original mnist dataset. These comparisons are shown below.
+
+![Results](https://github.com/lfzbrennan/Compressing-Mnist-using-BiCAN/edit/master/supplementary_images/data_table.png)
+
+The best results netted roughly 1% (with a decompressor loss of ~.011) loss. 
