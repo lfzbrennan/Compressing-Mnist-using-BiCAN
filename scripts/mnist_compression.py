@@ -6,7 +6,6 @@ import torch.nn as nn
 import torch.optim as opt
 import torch.nn.functional as F
 import torchvision as vision
-from torch.nn.modules import flatten
 #import matplotlib.pyplot as plt
 
 import torchvision.utils as vutils
