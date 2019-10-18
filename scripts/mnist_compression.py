@@ -254,8 +254,7 @@ def main():
             # print results
 
             if count % sampling_frequency == 0:
-                print("Epoch: " + str(epoch) + "    " + "Batch #: " + str(count) + "/" + str(int(train_set_size/batch_size))+ "    " + "Decompressor Loss: " +
-                    str(decom_loss.__round__(4)) + "    Compressor Loss: " + str(com_loss.__round__(4)))
+            
                 print("Epoch: {}    Batch #: {}/{}     Decompressor Loss: {}     Compressor Loss: {}".format(
                         str(epoch), str(count), str(int(train_set_size/batch_size)), str(decom_loss.__round__(4)), str(com_loss.__round__(4))
                      ))
