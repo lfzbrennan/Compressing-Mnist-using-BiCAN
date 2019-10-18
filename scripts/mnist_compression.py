@@ -257,6 +257,10 @@ def main():
             if count % sampling_frequency == 0:
                 print("Epoch: " + str(epoch) + "    " + "Batch #: " + str(count) + "/" + str(int(train_set_size/batch_size))+ "    " + "Decompressor Loss: " +
                     str(decom_loss.__round__(4)) + "    Compressor Loss: " + str(com_loss.__round__(4)))
+                print("Epoch: {}    Batch #: {}/{}     Decompressor Loss: {}     Compressor Loss: {}".format(
+                        str(epoch), str(count), str(int(train_set_size/batch_size)), str(decom_loss.__round__(4)), str(com_loss.__round__(4))
+                     ))
+                     
 
         if (str(device) == 'cuda:0'):
             torch.cuda.empty_cache()
@@ -310,8 +314,9 @@ def main():
 
         print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
 
-        print("Epoch " + str(epoch) + " Final::-->  Decompressor Loss: " + str(current_decompressor_loss)
-                + "    Compressor Loss: " + str(current_compressor_loss))
+        print("Epoch {} Final::-->>>> Decompressor Loss: {}     Compressor Loss: {}".format(
+            str(epoch), str(current_decompressor_loss), str(current_compressor_loss)
+        ))
 
         print("-----------------------------------------------------------")
 
@@ -336,7 +341,8 @@ def main():
 
 
     for i in range(epoch):
-        print("Epoch: " + str(i + 1) + "    Decompressor Loss: " + str(decompressed_loss_list[i]) + "   Compressor Loss: " + str(compressed_loss_list[i]))
+  
+        print("Epoch: {}    Decompressor Loss: {}    Compressor Loss: {}".format(str(i+1), decompressed_loss_list[i], compressed_loss_list[i]))
 
 
     comp_state= {
@@ -350,6 +356,9 @@ def main():
 
     torch.save(comp_state, "mnist_comp_gan_1.tar")
     torch.save(decomp_state, 'mnist_decomp_gan_1.tar')
+              
+# uncomment to display image examples        
+'''
 
     cols = 4
     rows = 4
@@ -366,7 +375,8 @@ def main():
         decompressed_sample_images = decompressor(compressed_sample_images).to(device)
 
         break
-'''
+        
+
     plt.figure(figsize=(10, 5))
     plt.axis("off")
     plt.title("Decompressed Images")
