@@ -50,8 +50,6 @@ test_loader = torch.utils.data.DataLoader(
 
 for image_batch in test_loader:
 
-    print("hey")
-
     images = image_batch[0]
 
     compressed_images = compressor(images)
